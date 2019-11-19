@@ -1,0 +1,88 @@
+[
+    {
+        "label": "flights",
+        "id": "SFLIGHT",
+        "attributes": [
+            {
+                "name": "CARRID",
+                "label": "carrierName",
+                "type": "string"
+            },
+            {
+                "name": "CONNID",
+                "label": "ConnectionId",
+                "type": "string"
+            },
+            {
+                "name": "FLDATE",
+                "label": "flightDate",
+                "type": "Date"
+            }
+        ],
+        "relations": [
+            {
+                "name":"bookings",
+                "target": "SBOOK",
+                "conditions": [
+                    {
+                        "source":"CARRID",
+                        "target":"CARRID",
+                        "operator":"="
+                    }
+                ]
+
+            }
+        ],
+        "actions":[
+            {
+                "name":"createFlight",
+                "arguments":[
+                    {
+                        "name":"carrierId",
+                        "type":"string"
+                    }
+                ],
+                "type":"ABAP",
+                "methodName":"createFlight"
+            }
+        ]
+    },
+    {
+        "label": "bookings",
+        "id": "SBOOK",
+        "attributes": [
+            {
+                "name": "CARRID",
+                "label": "carrierName",
+                "type": "string"
+            },
+            {
+                "name": "CONNID",
+                "label": "ConnectionId",
+                "type": "string"
+            },
+            {
+                "name": "FLDATE",
+                "label": "flightDate",
+                "type": "Date"
+            },
+            {
+                "name": "BOOKID",
+                "label": "bookingId",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "label": "carrier",
+        "id": "SCARR",
+        "attributes": [
+            {
+                "name": "CARRID",
+                "label": "carrierName",
+                "type": "string"
+            }
+        ],
+        "relations": []
+    }
+]

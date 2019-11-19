@@ -1,0 +1,8 @@
+{
+    flights(carrierName:"AA",ConnectionID:"0017"){
+        carrierName,
+        bookings{
+            carrierName
+        }
+    }
+}

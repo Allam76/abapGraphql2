@@ -1,0 +1,2 @@
+CLASS test DEFINITION DEFERRED.
+CLASS zcl_graphql_http_handler DEFINITION LOCAL FRIENDS test.
